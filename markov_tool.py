@@ -34,7 +34,7 @@ class InstanceList(object):
     def __get_next_token(self, random_generator=None):
         if random_generator == None:
             random_generator = SOMETHING_HERE
-        index = SOMETHING_HERE(0,self.instances)
+        index = random_generator(0,self.instances)
         key_index = 0
         for key in self.output.keys():
             key_index += self.output[key]

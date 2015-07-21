@@ -18,8 +18,9 @@ if ins['a'] != 2 or ins._get_native_types() != (2, {'a': 2}):
 
 ins['b'] = 2
 
-if ins.__InstanceList_get_next_token(lambda x, y: 0) != 'a':
-    print "There was a problem getting the next token (value: 0)."
+if ins._InstanceList__get_next_token(lambda x, y: 0) != 'a':
+    print "There was a problem getting the next token (value: 0). Actual value: " + \
+    str(ins._InstanceList__get_next_token(lambda x, y: 0))
     print ins._get_native_types()    
 
 instance = mt.InstanceMatrix()
