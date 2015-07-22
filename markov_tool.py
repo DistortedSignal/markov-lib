@@ -42,7 +42,6 @@ class InstanceList(object):
                 return key
         raise IndexError("The random number was out of range.")
 
-
 class InstanceMatrix(object):
     '''I really need to document this so that I can remember what it does later.'''
 
@@ -59,7 +58,8 @@ class InstanceMatrix(object):
             else:
                 self.matrix[first][second] = 1
         else:
-            self.matrix[first] = {second: 1}
+            self.matrix[first] = InstanceList()
+            self.matrix[first][second] = 1
 
     def load(self, iter_data):
         data_len = len(iter_data)
@@ -70,8 +70,17 @@ class InstanceMatrix(object):
                 self._add_elem(iter_data[i-1], iter_data[i])
         self._add_elem(iter_data[-1], '')
 
-
-
+    def generate(self):
+        result = ""
+        while True:
+            if result == "":
+                result += self.matrix[''].get_next_token()
+            else:
+                tmp = self.matrix[result[-1]].get_next_token()
+                if tmp == '':
+                    break
+                result += tmp
+        return result
 
 class MarkovChainGenerator(object):
 
