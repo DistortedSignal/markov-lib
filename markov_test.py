@@ -36,28 +36,26 @@ if result != 'b':
     str(result)
     print ins._get_native_types()
 
-instance = mt.InstanceMatrix()
+result = ins._InstanceList__get_next_token(lambda x, y: 3)
+if result != 'b':
+    print "There was a problem getting the next token (value: 3). Actual value: " + \
+    str(result)
+    print ins._get_native_types()
 
-instance._add_elem('a', 'b')
-if {'a': {'b': 1}} != instance._get_matrix():
-    print "There was a problem adding a new top-level element."
-    print instance._get_matrix()
-
-instance._add_elem('a', 'c')
-if {'a': {'b': 1, 'c': 1}} != instance._get_matrix():
-    print "There was a problem adding a new second-level element."
-    print instance._get_matrix()
-
-instance._add_elem('a', 'c')
-if {'a': {'b': 1, 'c': 2}} != instance._get_matrix():
-    print "There was a problem updating a second-level element."
-    print instance._get_matrix()
+try:
+    result = ins._InstanceList__get_next_token(lambda x, y: 4)
+except IndexError as e:
+    print "Caught Index error"
+else:
+    print "We didn't catch any errors, and that's a problem."
 
 instance = mt.InstanceMatrix()
 
 instance.load('this')
-if {'': {'t': 1}, 't': {'h': 1}, 'h': {'i': 1}, 'i': {'s': 1}, 's': {'': 1}} != instance._get_matrix():
-    print "There was a problem loading a string into the Instance Matrix."
+
+a = instance.generate()
+if a != "this":
+    print "There was a problem generating from the instance matrix."
+    print "Result: " + a
 
 print "Tests finished."
-
