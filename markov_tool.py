@@ -23,6 +23,9 @@ class InstanceList(object):
 
         self.output[a] = b
 
+    def keys(self):
+        return self.output.keys()
+
     def _get_native_types(self):
         '''This method is only used for testing. If it's called anywhere outside the test harness, there's something 
         wrong.'''
@@ -51,9 +54,17 @@ class InstanceMatrix(object):
     def _get_matrix(self):
         return self.matrix
 
+    def _get_native_types(self):
+        ret_str = "{"
+        for a in self.matrix.keys():
+            ret_str += '"' + a + '":' + str(self.matrix[a]._get_native_types()[1]) + ","
+
+        ret_str = ret_str[:-1] + "}"
+        return ret_str
+
     def _add_elem(self, first, second):
-        if first in self.matrix:
-            if second in self.matrix[first]:
+        if first in self.matrix.keys():
+            if second in self.matrix[first].keys():
                 self.matrix[first][second] += 1
             else:
                 self.matrix[first][second] = 1
