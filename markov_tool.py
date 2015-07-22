@@ -81,8 +81,3 @@ class InstanceMatrix(object):
                     break
                 result += tmp
         return result
-
-class MarkovChainGenerator(object):
-
-    def __init__(self):
-        self.markov_matrix = MarkovMatrix()
