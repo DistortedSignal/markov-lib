@@ -18,24 +18,37 @@ if ins['a'] != 2 or ins._get_native_types() != (2, {'a': 2}):
 
 ins['b'] = 2
 
-if ins._InstanceList__get_next_token(lambda x, y: 0) != 'a':
+result = ins._InstanceList__get_next_token(lambda x, y: 0)
+if result != 'a':
     print "There was a problem getting the next token (value: 0). Actual value: " + \
-    str(ins._InstanceList__get_next_token(lambda x, y: 0))
-    print ins._get_native_types()    
+    str(result)
+    print ins._get_native_types()
+
+result = ins._InstanceList__get_next_token(lambda x, y: 1)
+if result != 'a':
+    print "There was a problem getting the next token (value: 1). Actual value: " + \
+    str(result)
+    print ins._get_native_types()
+
+result = ins._InstanceList__get_next_token(lambda x, y: 2)
+if result != 'b':
+    print "There was a problem getting the next token (value: 2). Actual value: " + \
+    str(result)
+    print ins._get_native_types()
 
 instance = mt.InstanceMatrix()
 
-instance._add_char('a', 'b')
+instance._add_elem('a', 'b')
 if {'a': {'b': 1}} != instance._get_matrix():
     print "There was a problem adding a new top-level element."
     print instance._get_matrix()
 
-instance._add_char('a', 'c')
+instance._add_elem('a', 'c')
 if {'a': {'b': 1, 'c': 1}} != instance._get_matrix():
     print "There was a problem adding a new second-level element."
     print instance._get_matrix()
 
-instance._add_char('a', 'c')
+instance._add_elem('a', 'c')
 if {'a': {'b': 1, 'c': 2}} != instance._get_matrix():
     print "There was a problem updating a second-level element."
     print instance._get_matrix()
