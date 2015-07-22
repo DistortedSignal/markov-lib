@@ -1,5 +1,5 @@
 from __future__ import division
-#from random import SOMETHING_HERE
+from random import randrange
 
 class InstanceList(object):
     '''A dictionary-like object that remembers how many objects have been put into it. The keys should be the secondary
@@ -33,13 +33,14 @@ class InstanceList(object):
 
     def __get_next_token(self, random_generator=None):
         if random_generator == None:
-            random_generator = SOMETHING_HERE
+            random_generator = randrange
         index = random_generator(0,self.instances)
         key_index = 0
         for key in self.output.keys():
             key_index += self.output[key]
-            if key_index >= index:
-                return self.output[key]
+            if key_index > index:
+                return key
+        raise IndexError("The random number was out of range.")
 
 
 class InstanceMatrix(object):
@@ -51,7 +52,7 @@ class InstanceMatrix(object):
     def _get_matrix(self):
         return self.matrix
 
-    def _add_char(self, first, second):
+    def _add_elem(self, first, second):
         if first in self.matrix:
             if second in self.matrix[first]:
                 self.matrix[first][second] += 1
@@ -64,20 +65,10 @@ class InstanceMatrix(object):
         data_len = len(iter_data)
         for i in range(data_len):
             if i == 0:
-                self._add_char('', iter_data[i])
+                self._add_elem('', iter_data[i])
             else:
-                self._add_char(iter_data[i-1], iter_data[i])
-        self._add_char(iter_data[-1], '')
-
-    def normalize():
-        total = 0
-        for a in self.matrix.keys():
-            total = 0
-            for b in self.matrix[a].keys():
-                total += self.matrix[a][b]
-
-            for b in self.matrix[a].keys():
-                pass
+                self._add_elem(iter_data[i-1], iter_data[i])
+        self._add_elem(iter_data[-1], '')
 
 
 
