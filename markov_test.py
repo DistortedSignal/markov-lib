@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import markov_tool as mt
 
 ins = mt.InstanceList()
@@ -59,3 +60,34 @@ if a != "this":
     print "Result: " + a
 
 print "Tests finished."
+
+pantheon = ["Abholos", "Alala", "Ammutseba", "Amon-Gorloth", "Aphoom-Zhah", "Apocolothoth", \
+"Arwassa", "Atlach-Nacha", "Ayi'ig", "Aylith", "Baoht Z'uqqa-Mogg", "Basatan", "B’gnu-Thun", \
+"Bokrug", "Bugg-Shash", "Byatis", "Chaugnar Faugn", "Caug-Narfagn", "Coatlicue", "Coinchenn", \
+"Crom Cruach", "Cthaat", "Cthaat Aquadingen", "Cthaeghya", "Cthugha", "Cthulhu", "Cthylla", \
+"Ctoggha", "Cyäegha", "Cynothoglys", "Dhumin", "Dygra", "Dythalla", "Dzéwà", "Eihort", "Ei'lor", \
+"Etepsed Egnis", "Ghadamon", "Ghatanothoa", "Ghisguth", "Glaaki", "Gleeth", "Gloon", "Gobogeg", \
+"Gog-Hoor", "Gol-goroth", "Golothess", "Groth-Golka", "Gtuhanai", "Gurathnaka", "Gur'la-ya", \
+"Gzxtyos", "Han", "Hastalÿk", "Hastur", "H’chtelegoth", "Hnarqu", "Hziulquoigmnzhah", "Idh-yaa", \
+"Inpesca", "Iod", "Istasha", "Ithaqua", "Janai'ngo", "Juk-Shabb", "Kaalut", "Kag'Naru", \
+"Kassogtha", "Kaunuzoth", "Khal'kru", "Klosmiebhyx", "K'nar'st", "Krang", "Kurpannga", "Lam", \
+"Lythalia", "Mappo no Ryujin", "M’basui Gwandu", "M'Nagalah", "Mnomquah", "Mordiggian", "Mormo", \
+"Mortllgh", "Mynoghra", "Nctosa & Nctolhu", "Ngirrth’lu", "Northot", "Nssu-Ghahnb", "Nug and Yeb", \
+"Nyaghoggua", "Nycrama", "Nyogtha", "Ob'mbu", "Oorn", "Othuum", "Othuyeg", "Pharol", "Poseidon", \
+"Psuchawrl", "Ptar-Axtlan", "Quachil Uttaus", "Quyagen", "Q'yth-az", "Raandaii-B'nk", "Ragnalla", \
+"Raphanasuan", "Rhan-Tegoth", "Rhogog", "Rh'Thulla", "Rokon", "Ruhtra Dyoll", "Saa'itii", "Scathach", \
+"Sebek", "Sedmelluq", "Sfatlicllp", "Shaklatal", "Shathak", "Shaurash-Ho", "Sheb-Teth", "Shlithneth", \
+"Sho-Gath", "Shterot", "Shudde M'ell", "Shuy-Nihl", "Sthanee", "S'tya-Yg'Nalle", "Summanus", "Swarog", \
+"Thanaroa", "Tharapithia", "Thog", "Th'rygh", "Tsathoggua", "Tulushuggua", "Turua", "Uitzilcapac", \
+"Ut'Ulls-Hr'Her", "Vhuzompha", "Vibur", "Vile-Oct", "Volgna-Gath", "Voltiyig", "Vthyarilops", \
+"Vulthoom", "Gsarthotegga", "Xalafu", "Xcthol", "Xinlurgash", "Xirdneth", "Xotli", "Xoxiigghua", \
+"Yegg-Ha", "Y'golonac", "Yhagni", "Yhashtur", "Yig", "Y'lla", "'Ymnar", "Yog-Sapha", "Yorith", \
+"Ysbaddaden", "Ythogtha", "Yug-Siturath", "Zathog", "Zhar and Lloigor", "Zindarak", "Zoth-Ommog", \
+"Zstylzhemghi", "Zystulzhemgni", "Zushakon", "Zuchequon", "Z'toggua", "Zvilpogghua"]
+
+gen = mt.InstanceMatrix()
+for g in pantheon:
+    gen.load(g)
+
+a = gen._get_native_types()
+print repr(a)
