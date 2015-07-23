@@ -89,5 +89,10 @@ gen = mt.InstanceMatrix()
 for g in pantheon:
     gen.load(g)
 
-a = gen._get_native_types()
-print repr(a)
+print gen.generate()
+print gen.generate()
+print gen.generate()
+print gen.generate()
+
+# a = gen._get_native_types()
+# print repr(a)
