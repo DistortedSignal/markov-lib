@@ -81,14 +81,12 @@ class InstanceMatrix(object):
                 self._add_elem(iter_data[i-1], iter_data[i])
         self._add_elem(iter_data[-1], '')
 
-    def generate(self):
+    def generate(self, sep=''):
+        prev_token = ''
         result = ""
         while True:
-            if result == "":
-                result += self.matrix[''].get_next_token()
-            else:
-                tmp = self.matrix[result[-1]].get_next_token()
-                if tmp == '':
-                    break
-                result += tmp
-        return result
+            prev_token = self.matrix[prev_token].get_next_token()
+            result += prev_token + sep
+            if prev_token == '':
+                break
+        return result.rstrip(sep)
