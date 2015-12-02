@@ -46,7 +46,35 @@ class InstanceList(object):
         raise IndexError("The random number was out of range.")
 
 class InstanceMatrix(object):
-    '''I really need to document this so that I can remember what it does later.'''
+    '''This is the root class of the Markov Model. To understand this class, you must understand the Markov Model.
+
+    Markov Model
+    ------------
+
+    The Markov Model of data is (from what I can tell) a frequentist approach to analyzing data based on the previous
+    element in the data list. For example, if I were to examine the following data:
+
+    abc
+    abbc
+    aabbcc
+    cba
+
+    then this data structure would look like this:
+
+    {   '' : (4) {'a': 3, 'c': 1}
+        'a': (5) {'b': 3, 'a': 1, '': 1}
+        'b': (6) {'c': 3, 'b': 2, 'a': 1}
+        'c': (5) {'': 3, 'c': 1, 'b': 1}
+    }
+
+    The process for Markov chain generation goes something like this:
+
+    1. Determine the previous element in the list of data (the "zero-th" element is the empty string).
+    2. Generate a random float between zero (inclusive) and the number of times we saw the previous element in the dataset (inclusive).
+    3. "Walk" the dictionary to find the next element.
+    4. If the next element is the end of the list, concatenate it and return the Markov Chain.
+
+    The documentation of walking the dictionary is in the __get_next_token method of the InstanceList class.'''
 
     def __init__(self):
         self.matrix = {}
