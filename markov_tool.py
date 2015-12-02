@@ -35,6 +35,7 @@ class InstanceList(object):
         return self.__get_next_token()
 
     def __get_next_token(self, random_generator=None):
+        '''Now I have to document this... great.'''
         if random_generator == None:
             random_generator = randrange
         index = random_generator(0,self.instances)
