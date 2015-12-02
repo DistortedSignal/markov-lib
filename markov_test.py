@@ -46,7 +46,7 @@ if result != 'b':
 try:
     result = ins._InstanceList__get_next_token(lambda x, y: 4)
 except IndexError as e:
-    print "Caught Index error"
+    print "Caught Index error, not a problem."
 else:
     print "We didn't catch any errors, and that's a problem."
 
@@ -61,29 +61,29 @@ if a != "this":
 
 print "Tests finished."
 
-pantheon = ["Abholos", "Alala", "Ammutseba", "Amon-Gorloth", "Aphoom-Zhah", "Apocolothoth", \
-"Arwassa", "Atlach-Nacha", "Ayi'ig", "Aylith", "Baoht Z'uqqa-Mogg", "Basatan", "B’gnu-Thun", \
-"Bokrug", "Bugg-Shash", "Byatis", "Chaugnar Faugn", "Caug-Narfagn", "Coatlicue", "Coinchenn", \
-"Crom Cruach", "Cthaat", "Cthaat Aquadingen", "Cthaeghya", "Cthugha", "Cthulhu", "Cthylla", \
-"Ctoggha", "Cyäegha", "Cynothoglys", "Dhumin", "Dygra", "Dythalla", "Dzéwà", "Eihort", "Ei'lor", \
-"Etepsed Egnis", "Ghadamon", "Ghatanothoa", "Ghisguth", "Glaaki", "Gleeth", "Gloon", "Gobogeg", \
-"Gog-Hoor", "Gol-goroth", "Golothess", "Groth-Golka", "Gtuhanai", "Gurathnaka", "Gur'la-ya", \
-"Gzxtyos", "Han", "Hastalÿk", "Hastur", "H’chtelegoth", "Hnarqu", "Hziulquoigmnzhah", "Idh-yaa", \
-"Inpesca", "Iod", "Istasha", "Ithaqua", "Janai'ngo", "Juk-Shabb", "Kaalut", "Kag'Naru", \
-"Kassogtha", "Kaunuzoth", "Khal'kru", "Klosmiebhyx", "K'nar'st", "Krang", "Kurpannga", "Lam", \
-"Lythalia", "Mappo no Ryujin", "M’basui Gwandu", "M'Nagalah", "Mnomquah", "Mordiggian", "Mormo", \
-"Mortllgh", "Mynoghra", "Nctosa & Nctolhu", "Ngirrth’lu", "Northot", "Nssu-Ghahnb", "Nug and Yeb", \
-"Nyaghoggua", "Nycrama", "Nyogtha", "Ob'mbu", "Oorn", "Othuum", "Othuyeg", "Pharol", "Poseidon", \
-"Psuchawrl", "Ptar-Axtlan", "Quachil Uttaus", "Quyagen", "Q'yth-az", "Raandaii-B'nk", "Ragnalla", \
-"Raphanasuan", "Rhan-Tegoth", "Rhogog", "Rh'Thulla", "Rokon", "Ruhtra Dyoll", "Saa'itii", "Scathach", \
-"Sebek", "Sedmelluq", "Sfatlicllp", "Shaklatal", "Shathak", "Shaurash-Ho", "Sheb-Teth", "Shlithneth", \
-"Sho-Gath", "Shterot", "Shudde M'ell", "Shuy-Nihl", "Sthanee", "S'tya-Yg'Nalle", "Summanus", "Swarog", \
-"Thanaroa", "Tharapithia", "Thog", "Th'rygh", "Tsathoggua", "Tulushuggua", "Turua", "Uitzilcapac", \
-"Ut'Ulls-Hr'Her", "Vhuzompha", "Vibur", "Vile-Oct", "Volgna-Gath", "Voltiyig", "Vthyarilops", \
-"Vulthoom", "Gsarthotegga", "Xalafu", "Xcthol", "Xinlurgash", "Xirdneth", "Xotli", "Xoxiigghua", \
-"Yegg-Ha", "Y'golonac", "Yhagni", "Yhashtur", "Yig", "Y'lla", "'Ymnar", "Yog-Sapha", "Yorith", \
-"Ysbaddaden", "Ythogtha", "Yug-Siturath", "Zathog", "Zhar and Lloigor", "Zindarak", "Zoth-Ommog", \
-"Zstylzhemghi", "Zystulzhemgni", "Zushakon", "Zuchequon", "Z'toggua", "Zvilpogghua"]
+pantheon = [u"Abholos", u"Alala", u"Ammutseba", u"Amon-Gorloth", u"Aphoom-Zhah", u"Apocolothoth", \
+u"Arwassa", u"Atlach-Nacha", u"Ayi'ig", u"Aylith", u"Baoht Z'uqqa-Mogg", u"Basatan", u"B'gnu-Thun", \
+u"Bokrug", u"Bugg-Shash", u"Byatis", u"Chaugnar Faugn", u"Caug-Narfagn", u"Coatlicue", u"Coinchenn", \
+u"Crom Cruach", u"Cthaat", u"Cthaat Aquadingen", u"Cthaeghya", u"Cthugha", u"Cthulhu", u"Cthylla", \
+u"Ctoggha", u"Cyäegha", u"Cynothoglys", u"Dhumin", u"Dygra", u"Dythalla", u"Dzéwà", u"Eihort", u"Ei'lor", \
+u"Etepsed Egnis", u"Ghadamon", u"Ghatanothoa", u"Ghisguth", u"Glaaki", u"Gleeth", u"Gloon", u"Gobogeg", \
+u"Gog-Hoor", u"Gol-goroth", u"Golothess", u"Groth-Golka", u"Gtuhanai", u"Gurathnaka", u"Gur'la-ya", \
+u"Gzxtyos", u"Han", u"Hastalÿk", u"Hastur", u"H'chtelegoth", u"Hnarqu", u"Hziulquoigmnzhah", u"Idh-yaa", \
+u"Inpesca", u"Iod", u"Istasha", u"Ithaqua", u"Janai'ngo", u"Juk-Shabb", u"Kaalut", u"Kag'Naru", \
+u"Kassogtha", u"Kaunuzoth", u"Khal'kru", u"Klosmiebhyx", u"K'nar'st", u"Krang", u"Kurpannga", u"Lam", \
+u"Lythalia", u"Mappo no Ryujin", u"M'basui Gwandu", u"M'Nagalah", u"Mnomquah", u"Mordiggian", u"Mormo", \
+u"Mortllgh", u"Mynoghra", u"Nctosa & Nctolhu", u"Ngirrth'lu", u"Northot", u"Nssu-Ghahnb", u"Nug and Yeb", \
+u"Nyaghoggua", u"Nycrama", u"Nyogtha", u"Ob'mbu", u"Oorn", u"Othuum", u"Othuyeg", u"Pharol", u"Poseidon", \
+u"Psuchawrl", u"Ptar-Axtlan", u"Quachil Uttaus", u"Quyagen", u"Q'yth-az", u"Raandaii-B'nk", u"Ragnalla", \
+u"Raphanasuan", u"Rhan-Tegoth", u"Rhogog", u"Rh'Thulla", u"Rokon", u"Ruhtra Dyoll", u"Saa'itii", u"Scathach", \
+u"Sebek", u"Sedmelluq", u"Sfatlicllp", u"Shaklatal", u"Shathak", u"Shaurash-Ho", u"Sheb-Teth", u"Shlithneth", \
+u"Sho-Gath", u"Shterot", u"Shudde M'ell", u"Shuy-Nihl", u"Sthanee", u"S'tya-Yg'Nalle", u"Summanus", u"Swarog", \
+u"Thanaroa", u"Tharapithia", u"Thog", u"Th'rygh", u"Tsathoggua", u"Tulushuggua", u"Turua", u"Uitzilcapac", \
+u"Ut'Ulls-Hr'Her", u"Vhuzompha", u"Vibur", u"Vile-Oct", u"Volgna-Gath", u"Voltiyig", u"Vthyarilops", \
+u"Vulthoom", u"Gsarthotegga", u"Xalafu", u"Xcthol", u"Xinlurgash", u"Xirdneth", u"Xotli", u"Xoxiigghua", \
+u"Yegg-Ha", u"Y'golonac", u"Yhagni", u"Yhashtur", u"Yig", u"Y'lla", u"'Ymnar", u"Yog-Sapha", u"Yorith", \
+u"Ysbaddaden", u"Ythogtha", u"Yug-Siturath", u"Zathog", u"Zhar and Lloigor", u"Zindarak", u"Zoth-Ommog", \
+u"Zstylzhemghi", u"Zystulzhemgni", u"Zushakon", u"Zuchequon", u"Z'toggua", u"Zvilpogghua"]
 
 gen = mt.InstanceMatrix()
 for g in pantheon:
